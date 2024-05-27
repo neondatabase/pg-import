@@ -1,0 +1,48 @@
+{
+  "type": "module",
+  "private": false,
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "name": "@neondatabase/migrate-pg",
+  "description": "A CLI tool to migrate between PostgreSQL databases",
+  "bin": {
+    "migrate-pg": "bin/migrate.js"
+  },
+  "scripts": {
+    "fmt": "prettier --write '**/*' --ignore-unknown"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.3",
+    "commander": "^12.1.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.5",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "prettier": "^3.2.5",
+    "semantic-release": "^23.1.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/neondatabase/migrate-pg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neondatabase/migrate-pg/issues"
+  },
+  "keywords": [
+    "postgres",
+    "postgresql"
+  ]
+}

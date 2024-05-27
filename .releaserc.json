@@ -1,0 +1,11 @@
+{
+  "branches": "release",
+  "plugins": [
+    "@semantic-release/git",
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/github", {}],
+    ["@semantic-release/npm", { "pkgRoot": "." }],
+    ["@semantic-release/exec", { "prepareCmd": "cp ./package*.json ./" }]
+  ]
+}

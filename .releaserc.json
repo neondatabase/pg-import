@@ -6,6 +6,6 @@
     "@semantic-release/release-notes-generator",
     ["@semantic-release/github", {}],
     ["@semantic-release/npm", { "pkgRoot": "." }],
-    ["@semantic-release/exec", { "prepareCmd": "cp ./package*.json ./" }]
+    ["@semantic-release/exec", {}]
   ]
 }

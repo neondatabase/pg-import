@@ -1,11 +1,11 @@
 # Migrate between Postgres databases
 
-A CLI tool to **migrate between PostgreSQL databases**.
+A CLI tool for **migrating data from one PostgreSQL database to another**.
 
 > [!NOTE]  
-> **This project is in the Experimental Stage.**
+> **This project is Experimental**
 > 
-> This project is in an experimental phase to set clear expectations for your usage. There could be known or unknown bugs, the API could evolve. While we cannot provide professional support for experimental projects, we’d be happy to hear from you if you see value in this project!
+> This project is experimental. There may be bugs, and the API is subject to change. While we cannot provide professional support for experimental projects, we welcome your feedback.
 
 ## Usage
 
@@ -29,11 +29,14 @@ npx @neondatabase/migrate-pg --silent false --accept-all false --source="pg-stri
 
 ## When Migrating to Neon
 
-- Make sure to enable [autoscaling](https://neon.tech/docs/introduction/autoscaling) and increase your maximum Compute Unit size during the migration process so that the destination instance has enough CPU and RAM to support the migration.
-- The following things can result in error during a migration process:
-  - `ALTER OWNER` commands
-  - `CREATE EVENT TRIGGER` commands
-  - Anything that requires superuser that's not included in `neon_superuser` role
+- Make sure your Neon plan supports your database size. The Neon Free Tier offers 0.5 GiB of storage. For larger data sizes, upgrade to the Launch or Scale plan. See [Neon plans](https://neon.tech/docs/introduction/plans).
+- If you are on the Neon Launch or Scale plan, you can optimize for the migration by configuring a larger compute size or enabling [autoscaling](https://neon.tech/docs/introduction/autoscaling) for additional CPU and RAM. See [How to size your compute](https://neon.tech/docs/manage/endpoints#how-to-size-your-compute).
+- This utility uses `pg_dump` and `pg_restore`. A generated dump file containing any of the following statements will produce a warning or error when data is restored to Neon:
+  - `ALTER OWNER` statements
+  - `CREATE EVENT TRIGGER` statements
+  - Any statement requiring the PostgreSQL superuser privilege or not held by the role running the migration
+
+  See [Import from Postgres](https://neon.tech/docs/import/import-from-postgres) for possible workarounds.
 
 ## Authors
 
@@ -43,10 +46,10 @@ This library is created by [Neon](https://neon.tech) with contributions from:
 
 ## Contributing
 
-We love our contributors! Here's how you can contribute:
+We love contributions! Here's how you can contribute:
 
 - [Open an issue](https://github.com/neondatabase/migrate-pg/issues) if you believe you've encountered a bug.
-- Make a [pull request](https://github.com/neondatabase/migrate-pg/pull) to add new features/make quality-of-life improvements/fix bugs.
+- Make a [pull request](https://github.com/neondatabase/migrate-pg/pull) to add new features, make improvements, or fix bugs.
 
 ## Contributors
 

@@ -29,7 +29,7 @@ npx @neondatabase/migrate-pg --silent false --accept-all false --source="pg-stri
 
 ## When Migrating to Neon
 
-- Make sure to enable [autoscaling](https://neon.tech/docs/introduction/autoscaling) and increase your maximum Compute Unit sizes during the migration process so that the compute is enough for large database instances.
+- Make sure to enable [autoscaling](https://neon.tech/docs/introduction/autoscaling) and increase your maximum Compute Unit size during the migration process so that the destination instance has enough CPU and RAM to support the migration.
 - The following things can result in error during a migration process:
   - `ALTER OWNER` commands
   - `CREATE EVENT TRIGGER` commands

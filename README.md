@@ -5,7 +5,7 @@ A CLI tool to **migrate between PostgreSQL databases**.
 > [!NOTE]  
 > **This project is in the Experimental Stage.**
 > 
-> This project experimental to set clear expectations for your usage. There could be known or unknown bugs, the API could evolve. While we cannot provide professional support for experimental projects, we’d be happy to hear from you if you see value in this project!
+> This project is in an experimental phase to set clear expectations for your usage. There could be known or unknown bugs, the API could evolve. While we cannot provide professional support for experimental projects, we’d be happy to hear from you if you see value in this project!
 
 ## Usage
 

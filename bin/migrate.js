@@ -18,6 +18,6 @@ process.env.SILENT = options.silent
 process.env.ACCEPT_ALL = options.acceptAll
 process.env.SOURCE_CONNECTION_STRING = options.source
 process.env.DESTINATION_CONNECTION_STRING = options.destination
-process.env.BACKUP_FILE_PATH = options.backupFilePath
+if (options.backupFilePath) process.env.BACKUP_FILE_PATH = options.backupFilePath
 
 migrateData()

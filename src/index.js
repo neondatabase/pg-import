@@ -50,8 +50,10 @@ async function setupPgDumpAndPgRestore(postgresVersion) {
   if (installOutput.length > 0) {
     installOutput = installOutput.split('\n')
     const index = installOutput.indexOf('If you need to have this software first in your PATH instead consider running:')
-    const tmp = installOutput[index + 1].trim()
-    if (tmp?.includes('PATH')) process.env.PATH = `${tmp.substring(tmp.indexOf('"') + 1, tmp.lastIndexOf('"'))}`
+    if (index !== -1) {
+      const tmp = installOutput[index + 1].trim()
+      if (tmp?.includes('PATH')) process.env.PATH = `${tmp.substring(tmp.indexOf('"') + 1, tmp.lastIndexOf('"'))}`
+    }
   }
 }
 
@@ -72,7 +74,7 @@ export async function migrateData() {
   console.log(`[@neondatabase/pg-import] Setting pg_dump and pg_restore for Postgres ${postgresVersion}`)
   await setupPgDumpAndPgRestore(postgresVersion)
   console.log('[@neondatabase/pg-import] pg_dump and pg_restore setup complete.')
-  const dumpName = process.env.BACKUP_FILE_PATH ?? `dump_restore_${uuidv4()}.bak`
+  const dumpName = process.env.BACKUP_FILE_PATH || `dump_restore_${uuidv4()}.bak`
   executeCommandSync('pg_dump', ['-Fc', '-v', '-d', process.env.SOURCE_CONNECTION_STRING, '-f', dumpName])
   console.log(`[@neondatabase/pg-import] Created a backup file '${dumpName}' succesfully.`)
   executeCommandSync('pg_restore', ['-v', '-d', process.env.DESTINATION_CONNECTION_STRING, dumpName])

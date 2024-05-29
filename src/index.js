@@ -61,7 +61,7 @@ async function dueDiligence() {
     getPostgresVersion(process.env.DESTINATION_CONNECTION_STRING),
   ])
   if (destinationPostgresVersion !== sourcePostgresVersion) {
-    throw new Error(`source postgres version: ${sourcePostgresVersion} does not match the destination postgres version: ${destinationPostgresVersion}.`)
+    throw new Error(`[@neondatabase/pg-import] Postgres version mismatch between source (${sourcePostgresVersion}) and destination (${destinationPostgresVersion}).`)
   }
   return sourcePostgresVersion
 }

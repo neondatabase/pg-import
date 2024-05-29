@@ -48,11 +48,11 @@ This library is created by [Neon](https://neon.tech) with contributions from:
 
 We love contributions! Here's how you can contribute:
 
-- [Open an issue](https://github.com/neondatabase/migrate-pg/issues) if you believe you've encountered a bug.
-- Make a [pull request](https://github.com/neondatabase/migrate-pg/pull) to add new features, make improvements, or fix bugs.
+- [Open an issue](https://github.com/neondatabase/pg-import/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/neondatabase/pg-import/pull) to add new features, make improvements, or fix bugs.
 
 ## Contributors
 
-<a href="https://github.com/neondatabase/migrate-pg/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=neondatabase/migrate-pg&purge=1" />
+<a href="https://github.com/neondatabase/pg-import/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=neondatabase/pg-import&purge=1" />
 </a>

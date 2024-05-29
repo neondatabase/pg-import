@@ -7,7 +7,7 @@
   "name": "@neondatabase/pg-import",
   "description": "A CLI tool for migrating data from one PostgreSQL database to another.",
   "bin": {
-    "migrate-pg": "bin/migrate.js"
+    "pg-import": "bin/migrate.js"
   },
   "scripts": {
     "fmt": "prettier --write '**/*' --ignore-unknown"
@@ -36,10 +36,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/neondatabase/migrate-pg.git"
+    "url": "git+ssh://git@github.com/neondatabase/pg-import.git"
   },
   "bugs": {
-    "url": "https://github.com/neondatabase/migrate-pg/issues"
+    "url": "https://github.com/neondatabase/pg-import/issues"
   },
   "keywords": [
     "postgres",

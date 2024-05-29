@@ -10,7 +10,7 @@ A CLI tool for **migrating data from one PostgreSQL database to another**.
 ## Usage
 
 ```sh
-npx @neondatabase/migrate-pg --silent false --accept-all false --source="pg-string" --destination="pg-string"
+npx @neondatabase/pg-import --silent false --accept-all false --source="pg-string" --destination="pg-string"
 ```
 
 ### Flags and Options

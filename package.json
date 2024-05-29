@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "Apache-2.0",
-  "name": "@neondatabase/migrate-pg",
+  "name": "@neondatabase/pg-import",
   "description": "A CLI tool for migrating data from one PostgreSQL database to another.",
   "bin": {
     "migrate-pg": "bin/migrate.js"

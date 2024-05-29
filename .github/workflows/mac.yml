@@ -7,35 +7,23 @@ jobs:
   migrate_macos_pg14:
     runs-on: macos-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
-      - name: Install dependencies
-        run: npm install
       - name: Run migration on MacOS for PostgreSQL 14
         run: npx @neondatabase/pg-import --accept-all true --source ${{ secrets.SOURCE_PG14 }} --destination ${{ secrets.DESTINATION_PG14 }}
 
   migrate_macos_pg15:
     runs-on: macos-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
-      - name: Install dependencies
-        run: npm install
       - name: Run migration on MacOS for PostgreSQL 15
         run: npx @neondatabase/pg-import --accept-all true --source ${{ secrets.SOURCE_PG15 }} --destination ${{ secrets.DESTINATION_PG15 }}
 
   migrate_macos_pg16:
     runs-on: macos-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
-      - name: Install dependencies
-        run: npm install
       - name: Run migration on MacOS for PostgreSQL 16
         run: npx @neondatabase/pg-import --accept-all true --source ${{ secrets.SOURCE_PG16 }} --destination ${{ secrets.DESTINATION_PG16 }}

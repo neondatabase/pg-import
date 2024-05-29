@@ -68,11 +68,14 @@ async function dueDiligence() {
 
 export async function migrateData() {
   const postgresVersion = await dueDiligence()
+  console.log(`[@neondatabase/pg-import] Detected Postgres ${postgresVersion}`)
+  console.log(`[@neondatabase/pg-import] Setting pg_dump and pg_restore for Postgres ${postgresVersion}`)
   await setupPgDumpAndPgRestore(postgresVersion)
-  console.log('---\nStarting migration\n---')
+  console.log('[@neondatabase/pg-import] pg_dump and pg_restore setup complete.')
   const dumpName = `dump_restore_${uuidv4()}.bak`
   executeCommandSync('pg_dump', ['-Fc', '-v', '-d', process.env.SOURCE_CONNECTION_STRING, '-f', dumpName])
+  console.log(`[@neondatabase/pg-import] Created a backup file '${dumpName}' succesfully.`)
   executeCommandSync('pg_restore', ['-v', '-d', process.env.DESTINATION_CONNECTION_STRING, dumpName])
-  console.log('---\nMigration completed successfully.\n---')
+  console.log(`[@neondatabase/pg-import] Data import process succesfully completed.`)
   process.exit(0)
 }

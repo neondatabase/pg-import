@@ -27,6 +27,9 @@ npx @neondatabase/pg-import --silent false --accept-all false --source="pg-strin
 - `--accept-all`: Automatically accepts all prompts if set to `true`. The default value is `false`.
   - Example: `--accept-all true`
 
+- `--backup-file-path`: Specifies the path and filename for the backup file. If not set, the default value is dump_restore_{randomly_generated_string}.bak.
+  - Example: `--backup-file-path "../Downloads/example.bak"`
+
 ## When Migrating to Neon
 
 - Make sure your Neon plan supports your database size. The Neon Free Tier offers 0.5 GiB of storage. For larger data sizes, upgrade to the Launch or Scale plan. See [Neon plans](https://neon.tech/docs/introduction/plans).

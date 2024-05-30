@@ -16,8 +16,8 @@ const options = program.opts()
 
 process.env.SILENT = options.silent
 process.env.ACCEPT_ALL = options.acceptAll
-process.env.SOURCE_CONNECTION_STRING = options.source
-process.env.DESTINATION_CONNECTION_STRING = options.destination
+if (options.source) process.env.SOURCE_CONNECTION_STRING = options.source
+if (options.destination) process.env.DESTINATION_CONNECTION_STRING = options.destination
 if (options.backupFilePath) process.env.BACKUP_FILE_PATH = options.backupFilePath
 
 migrateData()

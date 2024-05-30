@@ -18,7 +18,7 @@ npx @neondatabase/pg-import@latest --silent false --accept-all false --source="p
 - `--source <source>`: The connection string for the source PostgreSQL database. This is **optional**.
   - Example: `--source "postgres://user:password@localhost:5432/source_db"`
 
-- `--destination <destination>`: The connection string for the destination PostgreSQL database. This is a **required** option.
+- `--destination <destination>`: The connection string for the destination PostgreSQL database. This is **optional**.
   - Example: `--destination "postgres://user:password@localhost:5432/destination_db"`
 
 - `--silent`: Suppresses console output if set to `true`. The default value is `false`.

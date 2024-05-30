@@ -59,6 +59,7 @@ async function setupPgDumpAndPgRestore(postgresVersion) {
 
 async function dueDiligence() {
   if (!process.env.SOURCE_CONNECTION_STRING) return await getPostgresVersion(process.env.DESTINATION_CONNECTION_STRING)
+  if (!process.env.DESTINATION_CONNECTION_STRING) return await getPostgresVersion(process.env.SOURCE_CONNECTION_STRING)
   const [sourcePostgresVersion, destinationPostgresVersion] = await Promise.all([
     getPostgresVersion(process.env.SOURCE_CONNECTION_STRING),
     getPostgresVersion(process.env.DESTINATION_CONNECTION_STRING),
@@ -81,8 +82,10 @@ export async function migrateData() {
     executeCommandSync('pg_dump', ['-Fc', '-v', '-d', process.env.SOURCE_CONNECTION_STRING, '-f', dumpName])
     console.log(`[@neondatabase/pg-import] Created a backup file '${dumpName}' succesfully.`)
   }
-  console.log(`[@neondatabase/pg-import] Initiating data import from backup file: '${dumpName}'`)
-  executeCommandSync('pg_restore', ['-v', '-d', process.env.DESTINATION_CONNECTION_STRING, dumpName])
-  console.log(`[@neondatabase/pg-import] Data import process succesfully completed.`)
+  if (process.env.DESTINATION_CONNECTION_STRING) {
+    console.log(`[@neondatabase/pg-import] Initiating data import from backup file: '${dumpName}'`)
+    executeCommandSync('pg_restore', ['-v', '-d', process.env.DESTINATION_CONNECTION_STRING, dumpName])
+    console.log(`[@neondatabase/pg-import] Data import process succesfully completed.`)
+  }
   process.exit(0)
 }

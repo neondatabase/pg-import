@@ -10,15 +10,15 @@ A CLI tool for **migrating data from one PostgreSQL database to another**.
 ## Usage
 
 ```sh
-npx @neondatabase/pg-import --silent false --accept-all false --source="pg-string" --destination="pg-string"
+npx @neondatabase/pg-import@latest --silent false --accept-all false --source="pg-string" --destination="pg-string"
 ```
 
 ### Flags and Options
 
-- `--source <source>`: The connection string for the source PostgreSQL database. This is a required option.
+- `--source <source>`: The connection string for the source PostgreSQL database. This is **optional**.
   - Example: `--source "postgres://user:password@localhost:5432/source_db"`
 
-- `--destination <destination>`: The connection string for the destination PostgreSQL database. This is a required option.
+- `--destination <destination>`: The connection string for the destination PostgreSQL database. This is a **required** option.
   - Example: `--destination "postgres://user:password@localhost:5432/destination_db"`
 
 - `--silent`: Suppresses console output if set to `true`. The default value is `false`.
@@ -27,7 +27,7 @@ npx @neondatabase/pg-import --silent false --accept-all false --source="pg-strin
 - `--accept-all`: Automatically accepts all prompts if set to `true`. The default value is `false`.
   - Example: `--accept-all true`
 
-- `--backup-file-path`: Specifies the path and filename for the backup file. If not set, the default value is dump_restore_{randomly_generated_string}.bak.
+- `--backup-file-path`: Specifies the path and filename for the backup file. If not set, the default value is **dump_restore_{randomly_generated_string}.bak**.
   - Example: `--backup-file-path "../Downloads/example.bak"`
 
 ## When Migrating to Neon

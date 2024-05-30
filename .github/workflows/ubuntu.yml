@@ -10,7 +10,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
       - name: Run migration on Ubuntu for PostgreSQL 14
-        run: npx @neondatabase/pg-import --accept-all true --source ${{ secrets.SOURCE_PG14 }} --destination ${{ secrets.DESTINATION_PG14 }}
+        run: npx @neondatabase/pg-import@latest --accept-all true --source ${{ secrets.SOURCE_PG14 }} --destination ${{ secrets.DESTINATION_PG14 }}
 
   migrate_ubuntu_pg15:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
       - name: Run migration on Ubuntu for PostgreSQL 15
-        run: npx @neondatabase/pg-import --accept-all true --source ${{ secrets.SOURCE_PG15 }} --destination ${{ secrets.DESTINATION_PG15 }}
+        run: npx @neondatabase/pg-import@latest --accept-all true --source ${{ secrets.SOURCE_PG15 }} --destination ${{ secrets.DESTINATION_PG15 }}
 
   migrate_ubuntu_pg16:
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
       - name: Run migration on Ubuntu for PostgreSQL 16
-        run: npx @neondatabase/pg-import --accept-all true --source ${{ secrets.SOURCE_PG16 }} --destination ${{ secrets.DESTINATION_PG16 }}
+        run: npx @neondatabase/pg-import@latest --accept-all true --source ${{ secrets.SOURCE_PG16 }} --destination ${{ secrets.DESTINATION_PG16 }}

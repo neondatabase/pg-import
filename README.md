@@ -3,7 +3,7 @@
 A CLI tool for **migrating data from one PostgreSQL database to another**.
 
 > [!NOTE]  
-> **This project is Experimental**
+> **This project is experimental.**
 > 
 > There may be bugs, and the API is subject to change. While we cannot provide professional support for experimental projects, we welcome your feedback.
 

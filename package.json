@@ -13,8 +13,8 @@
     "fmt": "prettier --write '**/*' --ignore-unknown"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.9.3",
     "commander": "^12.1.0",
+    "pg": "^8.11.5",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

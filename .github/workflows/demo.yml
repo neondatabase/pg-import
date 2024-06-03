@@ -10,4 +10,4 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
       - name: Import Data (To Destination)
-        run: npx @neondatabase/pg-import@latest --accept-all true --source ${{ secrets.SOURCE_PG }} --destination ${{ secrets.DESTINATION_PG }}
+        run: npx @neondatabase/pg-import@latest --silent true --accept-all true --source ${{ secrets.SOURCE_PG }} --destination ${{ secrets.DESTINATION_PG }}

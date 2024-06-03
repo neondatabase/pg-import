@@ -1,0 +1,13 @@
+name: Postgres Backup (To Destination)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import_database:
+    runs-on: macos-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+      - name: Import Data (To Destination)
+        run: npx @neondatabase/pg-import@latest --accept-all true --source ${{ secrets.SOURCE_PG }} --destination ${{ secrets.DESTINATION_PG }}
